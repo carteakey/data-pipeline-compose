@@ -1,11 +1,11 @@
 # data-pipeline-compose
 Docker Compose for big data processing using Hadoop, Hive, PySpark, Spark, Jupyter, and Airflow. 
 
-This Docker Compose setup is designed to provide a full-fledged environment for data processing and analytics, including data storage, processing, workflow management, and interactive analysis.
+This Docker Compose setup is designed to provide a full-fledged environment for data processing and analytics, including data storage, processing, workflow, and analysis.
 
-It can act as a good starting point to create an easy-to-deploy learning environment for data professionals and enthusiasts. 
+It serves as a good starting point to create an easy-to-deploy learning environment for data enthusiasts. 
 
-Sensible defaults and project structure used, and the services are configured to interact with each other seamlessly.
+Sensible defaults and project structure are used, and the services are configured to seamlessly interact with each other.
 
 Example Project: [world-energy-stats](https://github.com/carteakey/world-energy-stats)
 
@@ -77,3 +77,10 @@ Note that services without exposed ports do not have URLs listed.
 - The .env file will be used by docker-compose to adjust the environment of the docker-compose command itself. (Specifically for airflow)
 
 - The docker-compose.env is defined as an env_file inside the yaml and will take environment variables from the file and inject them into the container. (For Hadoop & Hive)
+
+#### Looks like you just mashed up all services in 1 compose file. 
+- That is correct, the point is to just streamline the initial configuration process without the usual setup hassles e.g. incompatible versions, port conflicts, integration between services, mounting volumes - making it easier to get a data environment up and running, especially for beginners.
+
+#### What's the docker-proxy for?
+- To allow Airflow to run docker commands.
+
