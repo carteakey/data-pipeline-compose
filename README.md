@@ -13,7 +13,7 @@ Example Project: [world-energy-stats](https://github.com/carteakey/world-energy-
 
 Spin up all services.
 ```bash
-docker compose up airflow-init
+docker compose up -d
 ```
 
 Check status of services.
@@ -21,17 +21,17 @@ Check status of services.
 docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}"
 ```
 
-Stop and remove everything (Warning - all data will be erased.)
+Stop and remove everything (Warning - all data will be erased).
 ```bash
 docker compose down --volumes --remove-orphans
 ```
 
-Get Token for Jupyter server
+Get Token for Jupyter server.
 ```bash
 docker exec spark-notebook jupyter server list
 ```
 
-Run Hive
+Run Hive.
 ```
 docker exec -it hive-server hive
 ```
@@ -68,8 +68,7 @@ docker exec -it hive-server hive
 | | `docker-proxy` | Socat-based proxy for Docker daemon. | localhost:2376 |
 | | `spark-notebook` | Jupyter Notebook for PySpark and analysis. | localhost:8888 |
 
-
-This table now provides the URLs for accessing the exposed ports of the services on your local machine. Note that services without exposed ports do not have URLs listed.
+Note that services without exposed ports do not have URLs listed.
 
 
 ## FAQ
